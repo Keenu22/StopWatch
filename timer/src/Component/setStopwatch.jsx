@@ -38,19 +38,20 @@ export default function SetStopwatch() {
   const handleStop = () => {
     setIsRunning(false);
   };
-  const handleReset=()=>{
-  setTimeExpired('0.00');
-  }
+
+  const handleReset = () => {
+    setTimeExpired("0:00");
+    setIsRunning(false);
+  };
+
   return (
     <div>
       <h1>Stopwatch</h1>
       <p>Time: {timeExpired}</p>
-      <button onClick={isRunning ? (handleStop):(handleStart)}>
-        {isRunning?'Start':'Stop'}
+      <button onClick={isRunning ? handleStop : handleStart}>
+        {isRunning ? "Stop" : "Start"}
       </button>
-      <button onClick={handleReset}>
-        Reset
-      </button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
